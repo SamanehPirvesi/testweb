@@ -42,15 +42,20 @@ public class Login extends HttpServlet {
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		if (password.equals("456")) {
+			/**
+			 * getcontextpath return the project name
+			 */
 //			response.sendRedirect(request.getContextPath()+"/profile/userprofile.html");
 //			System.out.println(username);
 			HttpSession session=request.getSession();
 			session.setAttribute("username",username );
-//			RequestDispatcher rds= request.getRequestDispatcher("AuthServlet");
-////			rds.forward(request, response);
+			RequestDispatcher rds= request.getRequestDispatcher("AuthServlet");
+//			rds.forward(request, response);
 //			rds.include(request, response);
 			
 			response.sendRedirect(request.getContextPath()+"/AuthServlet");
+//			System.out.println(session.getId());
+		
 		}else
 		{
 			response.sendRedirect("index.html");

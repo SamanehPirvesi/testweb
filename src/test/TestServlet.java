@@ -33,7 +33,7 @@ public class TestServlet extends HttpServlet {
 		//response.getWriter().append(request.getServerPort()+request.getRequestURI());
 		
 		HttpSession  session =request.getSession();
-		
+			
 		System.out.println(session.getId());
 		   PrintWriter writer = response.getWriter();
 	         
